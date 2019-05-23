@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <h1>Create a new Cocktail</h1>
+    <div class="col-8 mt-3">
+      <%= simple_form_for [@cocktail] do |f| %>
+        <%= f.input :name, placeholder: "Sulav" %>
+        <%= f.submit "Submit", class: "btn btn-danger" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
