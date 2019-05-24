@@ -1,9 +1,29 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to image_tag("https://images.ricardocuisine.com/services/recipes/500x675_7117.jpg"), cocktails_path, :class => 'navbar-brand' %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to 'Cocktails List', cocktails_path, :class => 'nav-link' %>
+      </li>
+      <li>
+        <%= link_to 'Add a cocktail', new_cocktail_path, :class => 'nav-link'%>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
 <div class="container">
   <div class="row justify-content-center">
     <h1>Create a new Cocktail</h1>
     <div class="col-8 mt-3">
       <%= simple_form_for [@cocktail] do |f| %>
-        <%= f.input :name, placeholder: "Sulav" %>
+        <%= f.input :name, :label => "Please type a name", placeholder: "Name" %>
         <%= f.submit "Submit", class: "btn btn-danger" %>
       <% end %>
     </div>

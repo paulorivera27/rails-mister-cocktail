@@ -1,11 +1,59 @@
-<h1>show</h1>
-<h3><%= @cocktail.name %></h3>
-<p><% @cocktail.ingredients.each do |ingredient|%>
-  <%=ingredient.name %>
-<% end %>
-<p><% @cocktail.doses.each do |dose|%>
-  <%=dose.description %>
-<% end %>
-</p>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to image_tag("https://images.ricardocuisine.com/services/recipes/500x675_7117.jpg"), cocktails_path, :class => 'navbar-brand' %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to 'Cocktails List', cocktails_path, :class => 'nav-link' %>
+      </li>
+      <li>
+        <%= link_to 'Add a cocktail', new_cocktail_path, :class => 'nav-link'%>
+      </li>
+    <!--   <li class="nav-item">
+        <a class="nav-link" href="#">Messages</a>
+      </li> -->
+    <!--   <li class="nav-item dropdown">
+        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+        </div>
+      </li> -->
+    </ul>
+  </div>
+</div>
+
+<div class="bordered-title">
+  <div class="d-flex justify-content-center">
+    <h1 class="cocktail-show"> <%= @cocktail.name %> </h1>
+  </div>
+</div>
+
+<div class="d-flex justify-content-around">
+  <%= image_tag('https://res.cloudinary.com/dkhc1tduj/image/upload/c_fit,h_300,w_400/v1550910100/ednyla0ezeiohrh9eijf.jpg', :class => 'cocktail-image-format') %>
+      <h2><%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail), class: 'fas fa-plus' %> </h2>
+      <div class="d-flex flex-column bd-highlight mb-3">
+        <div class="p-2 bd-highlight">
+          <ul> Doses: <% @cocktail.doses.each do |dose| %>
+            <li>
+              <%= dose.description %>
+            </li>
+          </ul>
+          <% end %>
+        </div class="d-flex flex-column bd-highlight mb-3">
+          <div class="p-2 bd-highlight">
+            <ul> Ingredients <% @cocktail.doses.each do |dose| %>
+              <li>
+                <%= dose.ingredient.name %>
+              </li>
+            </ul>
+              <% end %>
+          </div>
+      </div>
+</div>
+
+
 
 
