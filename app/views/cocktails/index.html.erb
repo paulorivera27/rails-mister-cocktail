@@ -33,17 +33,17 @@
   class="bordered-title"><h1>Welcome to Mr. Cocktail</h1>
 </div>
 
-<div class="d-flex justify-content-center">
-    <div class="s">
-      <% @cocktails.each do |cocktail|%>
-        <%= cl_image_tag cocktail.photo, width: 400, height: 300, class: 'card-category'  %>
-        <%= link_to cocktail.name, cocktail_path(cocktail), :class => 'cards-links'%>
-      <% end %>
-    </div>
+
+
+<div class="cards">
+  <% @cocktails.each do |cocktail|%>
+  <%= link_to cocktail_path(cocktail) do %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.photo %>)">
+    <%= cocktail.name %>
+  </div>
+  <% end %>
+  <% end %>
 </div>
-
-
-
 
 
 
