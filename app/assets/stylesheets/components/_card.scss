@@ -1,19 +1,27 @@
 .cards {
-  height: 450px;
-  widows: 900px;
+  height: 500px;
+  width: 800px;
   color: white;
-.card-category {
-  background-size: cover;
-  height: 400px;
-  width: 400px;
-}
+  .card-category {
+    height: 500px;
+    width: 800px;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    width: 250px;
+  }
+
+   a {
+    color: white;
 }
 
-.cards-links {
-  color: white;
-  &:hover{
-    color: grey;
+a:hover {
+    color: red;
     text-decoration: none;
+  }
+
+.mojito-name-card {
+  color: white;
   }
 }
 

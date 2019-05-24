@@ -15,11 +15,10 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
-
     if @cocktail.save
       redirect_to @cocktail, notice: 'Cocktail added'
     else
-      render :new
+      render :new, notice: 'An error has occurred make sure you are adding a name and photo.'
     end
   end
 
@@ -28,8 +27,4 @@ class CocktailsController < ApplicationController
   def cocktail_params
     params.require(:cocktail).permit(:name, :photo)
   end
-
-  # def find_cocktail
-  #   @cocktail = Cocktail.find(params[:id])
-  # end
 end
