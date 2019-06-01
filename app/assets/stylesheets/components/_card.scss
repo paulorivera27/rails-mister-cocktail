@@ -1,28 +1,34 @@
 .cards {
-  height: 500px;
-  width: 800px;
-  color: white;
-  .card-category {
-    height: 500px;
-    width: 800px;
-    background-size: cover;
-    background-position: center;
-    height: 400px;
-    width: 250px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  a h3 {
+    padding-top: 127px;
+    padding-left: 16px;
+    color: #f7f7f7;
+    font-family: 'Telex', sans-serif;
   }
-
-   a {
-    color: white;
+  a:hover {
+    text-decoration: none;
+    color: #8669b2;
+  }
+  h3:hover {
+    color: #8669b2;
+  }
 }
 
-a:hover {
-    color: red;
-    text-decoration: none;
-  }
+.card-category {
+  width: 330px;
+  height: 175px;
+  border-radius: 8px;
+  background: round;
+  background-size: cover;
+}
 
-.mojito-name-card {
-  color: white;
-  }
+.container {
+  width: 1053px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 // Smallest device

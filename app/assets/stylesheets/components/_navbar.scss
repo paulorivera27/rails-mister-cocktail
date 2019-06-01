@@ -1,10 +1,13 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  background: #54457F;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  font-family: 'Aclonica', sans-serif;
+  color: #54457F;
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -12,10 +15,17 @@
 }
 
 .bordered-title {
-  border-bottom: solid;
+  color: #54457F;
+  border-bottom: #54457F solid;
   padding: 20px;
   margin-left: 200px;
   margin-right: 200px;
   text-align: center;
   margin-bottom: 50px;
+  h1 {
+  font-family: 'ABeeZee', sans-serif;
+  }
 }
+
+
+
