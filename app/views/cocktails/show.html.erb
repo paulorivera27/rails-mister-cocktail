@@ -16,33 +16,38 @@
 </div>
 
 <div class="bordered-title">
-  <div class="d-flex justify-content-center">
-    <h1 class="cocktail-show"> <%= @cocktail.name %> </h1>
+  <div class="d-flex justify-content-between">
+    <h1 class="cocktail-show"> <%= @cocktail.name %>
+      <h2 id="new-dose"><%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail), class: 'fas fa-plus' %>
+      </h2>
+    </h1>
+
   </div>
 </div>
 
-<div class="d-flex justify-content-around">
-  <%= cl_image_tag(@cocktail.photo, :class => 'cocktail-image-format') %>
-      <h2><%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail), class: 'fas fa-plus' %> </h2>
-      <div class="d-flex flex-column bd-highlight mb-3">
-        <div class="p-2 bd-highlight">
-          <ul> Doses: <% @cocktail.doses.each do |dose| %>
-            <li>
-              <%= dose.description %>
-            </li>
-          </ul>
-          <% end %>
-        </div class="d-flex flex-column bd-highlight mb-3">
-          <div class="p-2 bd-highlight">
-            <ul> Ingredients <% @cocktail.doses.each do |dose| %>
-              <li>
-                <%= dose.ingredient.name %>
-              </li>
-            </ul>
+<div class="container">
+    <div class="d-flex justify-content-between">
+        <%= cl_image_tag(@cocktail.photo, class: 'show-card-category' ) %>
+        <div class="cocktail-details">
+          <div>
+          </div class="d-flex flex-column bd-highlight mb-3">
+            <h2 class="p-2 bd-highlight"> Doses and Ingredients: </h2>
+              <% @cocktail.doses.each do |dose| %>
+            <div id="dose-div">
+              <p class="dose-desc">
+                <%= dose.description %>
+              </p>
+              <p class="dose-ingredient">
+                <%= dose.ingredient.name%>
+              </p>
+              <h3 id="delete-dose-link"> <%= link_to '', cocktail_dose_path(@cocktail, dose.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'fas fa-trash' %></h3>
+            </div>
               <% end %>
-          </div>
-      </div>
+        </div>
+    </div>
 </div>
+
+
 
 
 
